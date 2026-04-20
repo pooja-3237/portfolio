@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pooja Mididhoddi | BCA Student | Tech Portfolio</title>
+  <meta
+    name="description"
+    content="Pooja Mididhoddi - BCA student with skills in programming, web development, data analytics, AI/ML and project experience in exam proctoring and email spam detection."
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #111827;
+      --surface-alt: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-strong: #22d3ee;
+      --border: rgba(148, 163, 184, 0.2);
+      --radius: 24px;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-strong);
+    }
+
+    .page-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 24px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 32px 0 40px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      gap: 10px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #22d3ee);
+      color: #0f172a;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 0.4);
+    }
+
+    .section {
+      padding: 48px 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .section:first-of-type {
+      border-top: none;
+    }
+
+    .section h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .tag-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-list li {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: #dbeafe;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .skill-icon {
+      font-size: 1.1rem;
+      color: var(--accent-strong);
+    }
+
+    .project-item,
+    .experience-item,
+    .education-item,
+    .cert-item,
+    .info-list li {
+      margin-bottom: 16px;
+    }
+
+    .experience-title,
+    .project-title,
+    .education-title,
+    .cert-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .experience-title strong,
+    .project-title strong,
+    .education-title strong,
+    .cert-title strong {
+      font-size: 1rem;
+    }
+
+    .small-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    footer {
+      padding: 32px 0 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card a {
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(34, 211, 238, 0.3));
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
+    .icon-text .fa-solid {
+      color: var(--accent);
+      min-width: 20px;
+    }
+
+    .skill-with-icon {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-with-icon .fa-solid {
+      font-size: 1.3rem;
+      color: var(--accent-strong);
+    }
+
+    .section-icon {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    .project-icon {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      color: var(--accent);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.12);
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background: var(--accent);
+      color: var(--bg);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 16px;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 860px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      header {
+        justify-content: center;
+      }
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-card {
+        padding: 24px;
+      }
+      header {
+        padding: 16px 0;
+      }
+      .page-wrap {
+        padding: 16px;
+      }
+      .header-content {
+        gap: 16px;
+        justify-content: center;
+      }
+      .avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+      }
+      nav {
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-link {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-wrap">
+    <header>
+      <div class="header-content">
+        <div class="avatar">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div class="brand">
+          <h1>Pooja Mididhoddi</h1>
+          <p><i class="fas fa-map-pin"></i> Hyderabad, Telangana</p>
+          <p style="margin-top: 8px; color: var(--text); font-size: 0.95rem;">
+            <strong>Entry-Level BCA Student</strong> | Web Development • Data Analytics • AI/ML
+          </p>
+          <div class="social-links">
+            <a class="social-icon" href="https://github.com/MididhidhoddiPooja" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a class="social-icon" href="https://www.linkedin.com/in/poojamididhoddi" target="_blank" rel="noopener" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="social-icon" href="mailto:poojamididhoddi@gmail.com" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a class="social-icon" href="tel:9347464253" title="Phone">
+              <i class="fas fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a class="nav-link" href="#about"><i class="fas fa-user"></i> About</a>
+        <a class="nav-link" href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a class="nav-link" href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a class="nav-link" href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a class="nav-link" href="#contact"><i class="fas fa-address-book"></i> Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero section" id="about">
+      <div class="hero-card">
+        <h2><i class="fas fa-rocket section-icon"></i>Professional Summary</h2>
+        <p>
+          Motivated BCA student seeking an entry-level opportunity or internship to apply programming,
+          web development, and data analytics skills while gaining practical industry experience.
+          Strong foundation in AI/ML concepts and hands-on project experience with real-world problem solving.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; margin: 24px 0;">
+          <div class="stat-box">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Major Projects</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Tech Skills</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Languages</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a class="btn btn-secondary" href="https://github.com/MididhidhoddiPooja" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> View GitHub
+          </a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/poojamididhoddi" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i> View LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <h2><i class="fas fa-briefcase section-icon"></i>Experience</h2>
+      <p>
+        Academic and project-driven experience applying programming, analytics, and AI concepts
+        through practical coursework and technical project work.
+      </p>
+
+      <div class="experience-item card">
+        <div class="experience-title">
+          <div style="flex: 1;">
+            <strong><i class="fas fa-award" style="color: var(--accent); margin-right: 8px;"></i>Academic Project Lead</strong>
+            <p class="small-label" style="margin: 8px 0 0; color: var(--accent);">BCA Program</p>
+          </div>
+          <span class="small-label"><i class="fas fa-calendar"></i> 2023 – Present</span>
+        </div>
+        <ul class="info-list">
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Designed an AI-based exam proctoring solution using OpenCV for real-time face detection and attention monitoring.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Built automated suspicious activity alerts for improved exam integrity and reduced manual supervision.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Developed email spam classification using TF-IDF and machine learning techniques to strengthen security filtering.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Demonstrated strong problem-solving skills and the ability to translate technical concepts into working solutions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2><i class="fas fa-tools section-icon"></i>Technical Skills</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3><i class="fas fa-code skill-icon"></i> Programming</h3>
+          <ul class="tag-list">
+            <li><i class="fas fa-cube"></i> C</li>
+            <li><i class="fab fa-python"></i> Python</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-globe skill-icon"></i> Web Development</h3>
+          <ul class="tag-list">
+            <li><i class="fab fa-html5"></i> HTML</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-chart-bar skill-icon"></i> Data Analytics</h3>
+          <ul class="tag-list">
+            <li><i class="fas fa-database"></i> Pandas</li>
+            <li><i class="fas fa-calculator"></i> NumPy</li>
+            <li><i class="fas fa-chart-line"></i> Matplotlib</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-brain skill-icon"></i> Database & AI</h3>
+          <ul class="tag-list">
+            <li><i class="fas fa-server"></i> DBMS</li>
+            <li><i class="fas fa-database"></i> SQL</li>
+            <li><i class="fas fa-robot"></i> ML</li>
+            <li><i class="fas fa-neural-network"></i> Deep Learning</li>
+            <li><i class="fas fa-microchip"></i> Prompt Engineering</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2><i class="fas fa-project-diagram section-icon"></i>Projects</h2>
+
+      <div class="project-item card">
+        <div class="project-title">
+          <div style="flex: 1;">
+            <strong><i class="fas fa-camera section-icon"></i>AI-Based Online Exam Proctoring System</strong>
+            <p class="small-label" style="margin: 8px 0 0;">OpenCV • Computer Vision • Security</p>
+          </div>
+        </div>
+        <ul class="info-list">
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Built an AI proctoring system using OpenCV to monitor exams through face detection and eye/head movement tracking.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Implemented automated suspicious activity alerts to enhance remote exam security and reduce manual invigilation overhead.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Focused on reliability and user-aware monitoring for a safer exam environment.</li>
+        </ul>
+      </div>
+
+      <div class="project-item card">
+        <div class="project-title">
+          <div style="flex: 1;">
+            <strong><i class="fas fa-shield-alt section-icon"></i>Email Spam Detection (ML)</strong>
+            <p class="small-label" style="margin: 8px 0 0;">TF-IDF • Classification • Security</p>
+          </div>
+        </div>
+        <ul class="info-list">
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Created a machine learning model to classify emails as spam or non-spam using TF-IDF vectorization.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Improved email filtering accuracy and supported safer email handling by reducing unwanted or malicious messages.</li>
+          <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Applied practical model-building and evaluation skills to improve data-driven decision making.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h2><i class="fas fa-graduation-cap section-icon"></i>Education</h2>
+
+      <div class="education-item card">
+        <div class="education-title">
+          <div style="flex: 1;">
+            <strong><i class="fas fa-book" style="color: var(--accent); margin-right: 8px;"></i>Bachelor of Computer Applications (BCA)</strong>
+            <p class="small-label" style="margin: 8px 0 0; color: var(--accent);">Indira Priyadarshini Government Degree College, Hyderabad</p>
+          </div>
+          <span class="small-label"><i class="fas fa-calendar"></i> 2023 – 2026</span>
+        </div>
+        <p style="color: var(--muted); font-size: 0.9rem;">Currently Pursuing</p>
+      </div>
+
+      <div class="education-item card">
+        <div class="education-title">
+          <div style="flex: 1;">
+            <strong><i class="fas fa-certificate" style="color: var(--accent); margin-right: 8px;"></i>Intermediate</strong>
+            <p class="small-label" style="margin: 8px 0 0; color: var(--accent);">SR. Junior College, Hyderabad</p>
+          </div>
+          <span class="small-label"><i class="fas fa-calendar"></i> 2023</span>
+        </div>
+      </div>
+
+      <div class="education-item card">
+        <div class="education-title">
+          <div style="flex: 1;">
+            <strong><i class="fas fa-school" style="color: var(--accent); margin-right: 8px;"></i>SSC (10th Grade)</strong>
+            <p class="small-label" style="margin: 8px 0 0; color: var(--accent);">Sri Bharathi Vidyalaya School, Hyderabad</p>
+          </div>
+          <span class="small-label"><i class="fas fa-calendar"></i> 2021</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <h2><i class="fas fa-award section-icon"></i>Certifications</h2>
+      <div class="grid-2">
+        <div class="cert-item card">
+          <div class="cert-title">
+            <strong><i class="fas fa-trophy" style="color: var(--accent); margin-right: 8px;"></i>Women in Data Program</strong>
+            <span class="small-label"><i class="fab fa-windows"></i> Dell Technologies</span>
+          </div>
+          <p>20-hour program focused on analytics, communication, and career readiness.</p>
+        </div>
+        <div class="cert-item card">
+          <div class="cert-title">
+            <strong><i class="fas fa-star" style="color: var(--accent); margin-right: 8px;"></i>Elementary Data Analytics</strong>
+            <span class="small-label"><i class="fas fa-book"></i> Learning Links Foundation</span>
+          </div>
+          <p>Structured certification covering foundational data and professional readiness skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2><i class="fas fa-envelope section-icon"></i>Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>Contact Info</h3>
+          <p style="margin-bottom: 16px;">
+            <strong><i class="fas fa-envelope"></i> Email</strong>
+          </p>
+          <p><a href="mailto:poojamididhoddi@gmail.com">poojamididhoddi@gmail.com</a></p>
+          <p style="margin-top: 16px;">
+            <strong><i class="fas fa-phone"></i> Phone</strong>
+          </p>
+          <p><a href="tel:9347464253">+91 9347464253</a></p>
+        </div>
+        <div class="contact-card">
+          <h3><i class="fas fa-link" style="color: var(--accent); margin-right: 8px;"></i>Connect With Me</h3>
+          <p style="margin-bottom: 16px;">
+            <strong><i class="fab fa-github"></i> GitHub</strong>
+          </p>
+          <p><a href="https://github.com/MididhidhoddiPooja" target="_blank" rel="noopener">github.com/MididhidhoddiPooja</a></p>
+          <p style="margin-top: 16px;">
+            <strong><i class="fab fa-linkedin"></i> LinkedIn</strong>
+          </p>
+          <p><a href="https://www.linkedin.com/in/poojamididhoddi" target="_blank" rel="noopener">linkedin.com/in/poojamididhoddi</a></p>
+        </div>
+      </div>
+
+      <div class="section" style="margin-top: 32px; padding: 0;">
+        <h2><i class="fas fa-star section-icon"></i>Additional Information</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3><i class="fas fa-lightbulb" style="color: var(--accent); margin-right: 8px;"></i>Key Strengths</h3>
+            <ul class="info-list">
+              <li><i class="fas fa-bolt" style="color: var(--accent); margin-right: 8px;"></i>Quick learner with strong adaptability</li>
+              <li><i class="fas fa-users" style="color: var(--accent); margin-right: 8px;"></i>Collaborative team player with clear communication</li>
+              <li><i class="fas fa-puzzle-piece" style="color: var(--accent); margin-right: 8px;"></i>Problem-solving mindset with analytical focus</li>
+              <li><i class="fas fa-cog" style="color: var(--accent); margin-right: 8px;"></i>Ability to translate concepts into working solutions</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-globe" style="color: var(--accent); margin-right: 8px;"></i>Languages</h3>
+            <ul class="tag-list" style="gap: 12px;">
+              <li><i class="fas fa-language"></i> English</li>
+              <li><i class="fas fa-language"></i> Telugu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p><i class="fas fa-heart" style="color: var(--accent);"></i> Designed for recruiters and hiring managers seeking entry-level tech talent.</p>
+    </footer>
+  </main>
+</body>
+</html>
